@@ -20,7 +20,7 @@
         lastname VARCHAR(30) NOT NULL,
         email VARCHAR(50) NOT NULL UNIQUE,
         gender CHAR(1) NOT NULL,
-        date_of_birth NOT NULL
+        date_of_birth DATE NOT NULL
     )';
 
     $result = $con->query($sql);
