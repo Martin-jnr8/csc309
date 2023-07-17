@@ -26,6 +26,17 @@
                 // Connect to the DB
                 // Select all records from users table
                 // Display all the selected records
+                 $server = 'localhost'; // 127.0.0.1
+                 $username = 'root';
+                 $password = 'rootroot';
+                 $db = 'csc309';
+
+                 // Open a new connection
+                 $con = new mysqli($server, $username, $password, $db);
+
+                 // Check connection
+                 if ($con->connect_error){
+                 die("Connection failed: " . $con->connect_error);
              ?>
                     <?php
                       $users = getAllUsers();
