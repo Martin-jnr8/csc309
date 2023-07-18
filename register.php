@@ -22,6 +22,16 @@
             <input type="email" name="email">
         </div>
 
+        <div>
+            <label for="gender">Gender:</label>
+            <input type="checkbox" name="gender" value="male">
+            <input type="checkbox" name="gender" value="female>
+        </div>
+
+        <div>
+            <label for="date_of_birh">Date of birth:</label>
+            <input type="date" name="date_of_birth">
+
         <button type="submit">Submit</button>
     </form>
 </body>
