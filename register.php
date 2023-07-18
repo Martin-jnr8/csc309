@@ -25,7 +25,7 @@
         <div>
             <label for="gender">Gender:</label>
             <input type="checkbox" name="gender" value="male">
-            <input type="checkbox" name="gender" value="female>
+            <input type="checkbox" name="gender" value="female">
         </div>
 
         <div>
