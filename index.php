@@ -28,7 +28,7 @@
                 // Display all the selected records
                  $server = 'localhost'; // 127.0.0.1
                  $username = 'root';
-                 $password = 'rootroot';
+                 $password = '';
                  $db = 'csc309';
 
                  // Open a new connection
@@ -37,19 +37,19 @@
                  // Check connection
                  if ($con->connect_error){
                  die("Connection failed: " . $con->connect_error);
+                 $result = $con->query($sql);
+
+                 if ($result->num_rows > 0){
+        
+                 while($row = $result->fetch_assoc()){
+                 echo $row['id'] . ' ' . $row['firstname'] . ' ' . $row['lastname'] . 
+                 ' ' .$row['email'] . '<br>';
+                 }
+
+                 } else {
+                 echo "No result";
+                 }
              ?>
-                    <?php
-                      $users = getAllUsers();
-                      foreach ($users as $user) {
-                    ?>
-                     <tr>
-                        <td><?php echo $user['1']; ?></td>
-                        <td><?php echo $user['Martin']; ?></td>
-                        <td><?php echo $user['Echi']; ?></td>
-                        <td><?php echo $user['echimartin2020@gmail.com']; ?></td>
-                        <td><?php echo $user['M']; ?></td>
-                        <td><?php echo $user['8 feb 2003']; ?></td>
-                     </tr>   
         </tbody>
     </table>
 </body>
