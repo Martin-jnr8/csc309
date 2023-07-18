@@ -39,16 +39,39 @@
                  die("Connection failed: " . $con->connect_error);
                  $result = $con->query($sql);
 
-                 if ($result->num_rows > 0){
-        
-                 while($row = $result->fetch_assoc()){
-                 echo $row['id'] . ' ' . $row['firstname'] . ' ' . $row['lastname'] . 
-                 ' ' .$row['email'] . '<br>';
+                 $sql ="SELECT* FROM users ";
+
+                 $result = $con->query($sql);
+
+                 if($result->num_rows>0){//looping through result variable and set it values in each rows to row variable
+
+                 while($row=$result->fetch_assoc()){
+
+         
+                    echo "<tr>";
+
+                    echo "<td>".$row['id']."</td>";
+
+                    echo "<td>".$row['firstname']."</td>";
+
+                    echo "<td>".$row['lastname']."</td>";
+
+                    echo "<td>".$row['email']."</td>";
+
+                    echo "<td>".$row['gender']."</td>";
+
+                    echo "<td>".$row['date_of_birth']."</td>";
+
+                    echo "</tr>";
+
+                    }
+
                  }
 
-                 } else {
-                 echo "No result";
-                 }
+                    // Close connection
+
+                    $con->close();
+          
              ?>
         </tbody>
     </table>
