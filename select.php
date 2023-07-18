@@ -26,7 +26,7 @@
         
         while($row = $result->fetch_assoc()){
             echo $row['id'] . ' ' . $row['firstname'] . ' ' . $row['lastname'] . 
-            ' ' .$row['email'] . '<br>';
+            ' ' .$row['email'] .$row['gender'] . ' ' . $row['date_of_birth'] . ' ' . '<br>';
         }
 
     } else {
